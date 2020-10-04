@@ -1,0 +1,103 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Trademe",
+		"_postman_id": "6be2ab42-4d3f-046e-f8ea-a49313502da8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search Car details -Working",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Has Number Plate\"] = responseBody.has(\"Number plate\");",
+							"tests[\"Has Kilometres\"] = responseBody.has(\"Kilometres\");",
+							"tests[\"Has Body\"] = responseBody.has(\"Body\");",
+							"tests[\"Has Seats\"] = responseBody.has(\"Seats\");",
+							"tests[\"Has Fuel type\"] = responseBody.has(\"Fuel type\");",
+							"tests[\"Has Engine\"] = responseBody.has(\"Engine\");",
+							"tests[\"Has Transmission\"] = responseBody.has(\"Transmission\");",
+							"tests[\"Has History\"] = responseBody.has(\"history\");",
+							"tests[\"Has Registration expires\"] = responseBody.has(\"Registration expires\");",
+							"tests[\"Has Model detail\"] = responseBody.has(\"Model detail\");",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "\thttps://api.tmsandbox.co.nz/v1/listings/2149195974.json",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "OAuth oauth_consumer_key=\"40E16151BD587446F7D311B5E997D8A8\", oauth_token=\"B6172EEBD3900C4C6C28B5629D744DFB\", oauth_signature_method=\"PLAINTEXT\", oauth_signature=\"12189282C51EBF8F2A5E598F39895B80&E0A98484677D781899B8E9CFABCB7908\"",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Search used car",
+			"request": {
+				"url": "\thttps://api.tmsandbox.co.nz/v1//Search/Motors.json",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "OAuth oauth_consumer_key=\"40E16151BD587446F7D311B5E997D8A8\", oauth_token=\"B6172EEBD3900C4C6C28B5629D744DFB\", oauth_signature_method=\"PLAINTEXT\", oauth_signature=\"12189282C51EBF8F2A5E598F39895B80&E0A98484677D781899B8E9CFABCB7908\"",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Search General",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Body has title\"] = responseBody.has(\"Title\");",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "\thttps://api.tmsandbox.co.nz/v1//Search/General.json",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "OAuth oauth_consumer_key=\"40E16151BD587446F7D311B5E997D8A8\", oauth_token=\"B6172EEBD3900C4C6C28B5629D744DFB\", oauth_signature_method=\"PLAINTEXT\", oauth_signature=\"12189282C51EBF8F2A5E598F39895B80&E0A98484677D781899B8E9CFABCB7908\"",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
