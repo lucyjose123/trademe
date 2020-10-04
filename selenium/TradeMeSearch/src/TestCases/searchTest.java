@@ -30,12 +30,14 @@ public class searchTest {
 		driver.get("https://www.tmsandbox.co.nz");
 		 
 		SearchPage searchpage=new SearchPage(driver);
-	searchpage.searchField().sendKeys("Cars");
-	searchpage.searchField().sendKeys(Keys.ENTER);
-	WebDriverWait wait = new WebDriverWait(driver,90);
-	
-	wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ListView_listingTableHeader_headerColumnListView")));
-Assert.assertEquals(true, searchpage.links().isDisplayed());
+		WebDriverWait wait = new WebDriverWait(driver,90);
+		
+		searchpage.MotorsLink().click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("SiteHeader_SiteTabs_SubNavMotors_LinkUsedCars")));
+		searchpage.usedCarLink().click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[data-category='Cars']")));
+Assert.assertEquals(true, searchpage.carListing().isDisplayed());
 	
 driver.quit();
 	

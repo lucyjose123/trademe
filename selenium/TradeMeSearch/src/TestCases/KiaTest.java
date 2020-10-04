@@ -33,13 +33,14 @@ public class KiaTest {
 		driver.get("https://www.tmsandbox.co.nz");
 		 
 		SearchPage searchpage=new SearchPage(driver);
-	searchpage.searchField().sendKeys("Cars");
-	searchpage.searchField().sendKeys(Keys.ENTER);
-WebDriverWait wait = new WebDriverWait(driver,90);
-	
-wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("LowerLevel")));
-	
-Assert.assertEquals(true, searchpage.brandsection().getText().contains("KIA"));
+		searchpage.MotorsLink().click();
+		WebDriverWait wait = new WebDriverWait(driver,90);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("SiteHeader_SiteTabs_SubNavMotors_LinkUsedCars")));
+		searchpage.usedCarLink().click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("makes")));
+
+Assert.assertEquals(true, searchpage.brandsection().getText().contains("Kia"));
 driver.quit();
 	
 	

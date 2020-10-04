@@ -17,8 +17,11 @@ public class SearchPage {
 	
 	 By searchField =By.id("searchString");
 	 By links=By.id("ListView_listingTableHeader_headerColumnListView");
-	 By brandSection=By.id("LowerLevel");
+	 By brandSection=By.id("makes");
 	 By carListing=By.cssSelector("div[data-category='Cars']");
+	 By MotorsLink=By.id("SearchTabs1_MotorsLink");
+	 By usedCarLink=By.id("SiteHeader_SiteTabs_SubNavMotors_LinkUsedCars");
+
 	 
 		public WebElement links()
 				{
@@ -40,7 +43,14 @@ public class SearchPage {
 	{
 		 return driver.findElement(carListing);
 	}
-	 
+	public WebElement  MotorsLink()
+	{
+		 return driver.findElement(MotorsLink);
+	}
+	public WebElement  usedCarLink()
+	{
+		 return driver.findElement(usedCarLink);
+	}
 	 
 	 
 	

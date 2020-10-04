@@ -29,10 +29,12 @@ import PageObject.SearchPage;
 		 
 		SearchPage searchpage=new SearchPage(driver);
 		DetailsPage detailspage=new DetailsPage(driver);
+		searchpage.MotorsLink().click();
+		WebDriverWait wait = new WebDriverWait(driver,90);
 
-	searchpage.searchField().sendKeys("Cars");
-	searchpage.searchField().sendKeys(Keys.ENTER);
-WebDriverWait wait = new WebDriverWait(driver,90);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("SiteHeader_SiteTabs_SubNavMotors_LinkUsedCars")));
+		searchpage.usedCarLink().click();
+		
 	
 wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[data-category='Cars']")));
 searchpage.carListing().click();
